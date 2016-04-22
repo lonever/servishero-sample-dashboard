@@ -36,6 +36,11 @@ export default React.createClass({
                  editing={false}
                />
             </Item>
+            <Item>
+              Services Provided: <Label className="blue">Cleaning(home)</Label>
+               <Label className="green">Cleaning(Commercial)</Label>
+                <Label className="orange">Moving</Label>
+            </Item>
           </List>
         </Segment>
         <Segment style={{width: "47%", float: "left"}}>
