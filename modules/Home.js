@@ -1,7 +1,14 @@
 import React from 'react'
+import { Statistic, Label } from 'react-semantify'
+import DashboardStatistics from './DashboardStatistics'
+
 
 export default React.createClass({
   render() {
-    return <div>Home</div>
+    return (
+      <div>
+        <DashboardStatistics/>
+      </div>
+    )
   }
 })
