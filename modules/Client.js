@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image, List, Item, Segment, Feed, Label, Content, Message } from 'react-semantify'
+import { Link } from 'react-router'
 import StarRatingComponent from 'react-star-rating-component'
 
 export default React.createClass({
@@ -39,7 +40,8 @@ export default React.createClass({
               </div>
               <Content>
                 <div className="summary">
-                    A quote was given for request: Cleaning(home)
+                    A quote was given for request: Cleaning(home) by <br/>
+                    <Link to="heroes/superman">Superman Cleaning Services</Link>
                     <Message>Hi, I can clean your house super quickly for RM3! Provided that there is no kryponite involved!</Message>
                   <div className="date">21/4/2016 15:30</div>
                 </div>
@@ -65,7 +67,8 @@ export default React.createClass({
             <div className="event">
               <Content>
                 <div className="summary">
-                  Wow!
+                  Wow!<br/>
+                  <Link to="heroes/superman">Superman Cleaning Services</Link>
                   <div className="date">20/4/2016 15:29</div>
                 </div>
                 <div className="extra text">
