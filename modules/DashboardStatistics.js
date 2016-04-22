@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button, Statistic, Segment} from 'react-semantify';
 
+var statisticTextStyle = { fontWeight: "bold", textTransfrom: "uppercase", fontSize: "1em", color: "black" };
 export default React.createClass({
   render() {
     return (
@@ -12,8 +13,8 @@ export default React.createClass({
                 <i className="icon comment"></i>
                 54
               </div>
-              <div className="label">
-                Requests
+              <div style={ statisticTextStyle } className="label">
+                REQUESTS
               </div>
             </Statistic>
             <Statistic style={{margin: "1.3em"}}>
@@ -21,8 +22,8 @@ export default React.createClass({
                 <i className="icon file text"></i>
                 78
               </div>
-              <div className="label">
-                Quotes
+              <div style={ statisticTextStyle }  className="label">
+                QUOTES
               </div>
             </Statistic>
             <Statistic style={{margin: "1.3em"}}>
@@ -30,8 +31,8 @@ export default React.createClass({
                 <i className="icon checkered flag"></i>
                 48
               </div>
-              <div className="label">
-                Fulfilled
+              <div style={ statisticTextStyle }  className="label">
+                FULFILLED
               </div>
             </Statistic>
             <Statistic style={{marginLeft: "5em"}}>
@@ -39,8 +40,8 @@ export default React.createClass({
                 <i className="icon child"></i>
                 2
               </div>
-              <div className="label">
-                Heroes Recruited
+              <div  style={ statisticTextStyle }  className="label">
+                HEROES RECRUITED
               </div>
             </Statistic>
 
