@@ -1,35 +1,61 @@
 import React from 'react'
-import NavLink from './NavLink'
+import { Segment, Menu, Item, List, Header } from 'react-semantify';
 
 export default React.createClass({
-  contextTypes: {
-    router: React.PropTypes.object
-  },
-
-  handleSubmit(event) {
-    event.preventDefault()
-    const userName = event.target.elements[0].value
-    const repo = event.target.elements[1].value
-    const path = `/repos/${userName}/${repo}`
-    this.context.router.push(path)
-  },
 
   render() {
     return (
       <div>
-        <h2>Repos</h2>
-        <ul>
-          <li><NavLink to="/repos/reactjs/react-router">React Router</NavLink></li>
-          <li><NavLink to="/repos/facebook/react">React</NavLink></li>
-          <li>
-            <form onSubmit={this.handleSubmit}>
-              <input type="text" placeholder="userName"/> / {' '}
-              <input type="text" placeholder="repo"/>{' '}
-              <button type="submit">Go</button>
-            </form>
-          </li>
-        </ul>
-        {this.props.children}
+        <Menu className="ui secondary pointing">
+          <Item className="active item">
+            All
+          </Item>
+          <Item className="item">
+            Home
+          </Item>
+          <Item className="item">
+            Moving
+          </Item>
+          <Item className="item">
+            Cleaning
+          </Item>
+          <Item className="item">
+            Events
+          </Item>
+          <Item className="item">
+            Learning
+          </Item>
+          <Item className="item">
+            Air Conditioning
+          </Item>
+          <Item className="item">
+            Fitness
+          </Item>
+          <Item className="item">
+            Pest Control
+          </Item>
+          <Item className="item">
+            Commercial
+          </Item>
+          <div className="right menu">
+            <Item className="ui item">
+              Logout
+            </Item>
+          </div>
+        </Menu>
+        <div className="ui segment">
+          <List className="divided">
+            <Item>
+              <div className="header">Superman</div>
+              A lovely city
+            </Item>
+            <Item>
+              <div className="header">Batman</div>
+              A small town
+            </Item>
+
+          </List>
+        </div>
       </div>
     )
   }
