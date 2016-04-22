@@ -1,3 +1,9 @@
-.active {
-  color: green;
+.dashboard-list-item {
+  padding: 1em !important;
+  font-size: 1.2em !important;
+}
+
+span.name {
+  font-weight: bold;
+  font-style: italic;
 }
