@@ -7,8 +7,7 @@ export default React.createClass({
       <div>
         <Segment>
           <h2><i className="icon calendar outline"></i>Today</h2>
-          <div className="ui statistics dashboard">
-            <Statistic>
+            <Statistic style={{margin: "1.3em"}}>
               <div className="value">
                 <i className="icon comment"></i>
                 54
@@ -17,7 +16,7 @@ export default React.createClass({
                 Requests
               </div>
             </Statistic>
-            <Statistic>
+            <Statistic style={{margin: "1.3em"}}>
               <div className="value">
                 <i className="icon file text"></i>
                 78
@@ -26,7 +25,7 @@ export default React.createClass({
                 Quotes
               </div>
             </Statistic>
-            <Statistic>
+            <Statistic style={{margin: "1.3em"}}>
               <div className="value">
                 <i className="icon checkered flag"></i>
                 48
@@ -44,7 +43,7 @@ export default React.createClass({
                 Heroes Recruited
               </div>
             </Statistic>
-          </div>
+
         </Segment>
       </div>
     )
