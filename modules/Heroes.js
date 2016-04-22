@@ -1,5 +1,6 @@
 import React from 'react'
-import { Segment, Menu, Item, List, Header } from 'react-semantify';
+import { Segment, Menu, Item, List, Header } from 'react-semantify'
+
 
 export default React.createClass({
 
