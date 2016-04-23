@@ -13,7 +13,7 @@ export default React.createClass({
     }.bind(this), 1000)
   },
   render() {
-    if (this.state && this.state.loading) {
+    if (!this.state || this.state.loading) {
       return (
         <Segment style={{minHeight: "10em"}}>
           <Loader className="centered active large"/>
@@ -27,39 +27,37 @@ export default React.createClass({
         </Segment>
       )
     }
+    var hero = this.state.hero
     return (
       <div>
         <Segment>
-          <Image className="left floated medium rounded" src="http://vignette2.wikia.nocookie.net/p__/images/0/0c/Superman's_classic_pose.png/revision/latest?cb=20131218234907&path-prefix=protagonist"/>
+          <Image className="left floated medium rounded" src={ this.state.hero.profilePic } />
           <List style={{float: "right", width: "65%"}}>
             <Item >
-              Superman Cleaning Services
+              { hero.name }
             </Item>
             <Item>
-              41, Jalan Flyaway,
-              Taman FlyTogether,
-              46100, Petaling Jaya,
-              Selangor
+              { hero.address }
             </Item>
             <Item>
               superman@gmail.com
             </Item>
             <Item>
-             +6012344444
+             { hero.phone }
             </Item>
             <Item>
               <StarRatingComponent
                  name="hero-rating"
                  starCount={10}
-                 value={6}
+                 value={ hero.averageRating }
                  editing={false}
                />
             </Item>
             <Item>
               Services Provided:
-                <ServiceLabel type="cleaning-home"/>
-                <ServiceLabel type="cleaning-commercial"/>
-                <ServiceLabel type="moving"/>
+                {hero.services.map((service, i)=> {
+                  return (  <ServiceLabel type={service}/>)
+                })}
             </Item>
           </List>
         </Segment>
