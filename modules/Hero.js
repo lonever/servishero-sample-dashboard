@@ -2,10 +2,11 @@ import React from 'react'
 import { Image, List, Item, Segment, Feed, Label, Content, Message } from 'react-semantify'
 import StarRatingComponent from 'react-star-rating-component'
 import ServiceLabel from './ServiceLabel'
+import heroes from './Mockdata/heroes'
 
 export default React.createClass({
   componentDidMount() {
-
+    console.log("heroes", heroes)
   },
   render() {
     const { heroId } = this.props.params
