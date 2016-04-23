@@ -3,33 +3,40 @@ import { Statistic, Label, Message, List, Item, Segment, Header } from 'react-se
 import DashboardStatistics from './DashboardStatistics'
 import DashboardListItem from './DashboardListItem'
 import DashboardMessage from './DashboardMessage'
+import dashboardStats from './Mockdata/dashboardStatistics'
+import topWeeklyStats from './Mockdata/topWeekly'
 
 
 export default React.createClass({
   render() {
     return (
       <div>
-        <DashboardStatistics/>
+        <DashboardStatistics
+          heroNumber={dashboardStats.heroesRecruited}
+          requestNumber={dashboardStats.requests}
+          quoteNumber={dashboardStats.quotes}
+          fulfilledNumber={dashboardStats.fulfilled}
+        />
         <Segment>
           <h2>Top 3 Service Requests of the week</h2>
           <List className="divided">
             <DashboardListItem
-              serviceName="Personal Training"
-              number={342}
+              serviceName={topWeeklyStats["1"].serviceType}
+              number={topWeeklyStats["1"].number}
               iconColour="blue"
-              icon="map marker"
+              icon={topWeeklyStats["1"].icon}
             />
             <DashboardListItem
-              serviceName="Cleaning(home)"
-              number={232}
+              serviceName={topWeeklyStats["2"].serviceType}
+              number={topWeeklyStats["2"].number}
               iconColour="blue"
-              icon="student"
+              icon={topWeeklyStats["2"].icon}
             />
             <DashboardListItem
-              serviceName="Moving"
-              number={123}
+              serviceName={topWeeklyStats["3"].serviceType}
+              number={topWeeklyStats["3"].number}
               iconColour="blue"
-              icon="shipping"
+              icon={topWeeklyStats["3"].icon}
             />
           </List>
         </Segment>

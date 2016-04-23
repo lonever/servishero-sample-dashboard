@@ -11,7 +11,7 @@ export default React.createClass({
             <Statistic style={{margin: "1.3em"}}>
               <div className="value">
                 <i className="icon comment"></i>
-                54
+                {this.props.requestNumber}
               </div>
               <div style={ statisticTextStyle } className="label">
                 REQUESTS
@@ -20,7 +20,7 @@ export default React.createClass({
             <Statistic style={{margin: "1.3em"}}>
               <div className="value">
                 <i className="icon file text"></i>
-                78
+                {this.props.quoteNumber}
               </div>
               <div style={ statisticTextStyle }  className="label">
                 QUOTES
@@ -29,7 +29,7 @@ export default React.createClass({
             <Statistic style={{margin: "1.3em"}}>
               <div className="value">
                 <i className="icon checkered flag"></i>
-                48
+                {this.props.fulfilledNumber}
               </div>
               <div style={ statisticTextStyle }  className="label">
                 FULFILLED
@@ -38,7 +38,7 @@ export default React.createClass({
             <Statistic style={{marginLeft: "5em"}}>
               <div className="value">
                 <i className="icon child"></i>
-                2
+                {this.props.heroNumber}
               </div>
               <div  style={ statisticTextStyle }  className="label">
                 HEROES RECRUITED

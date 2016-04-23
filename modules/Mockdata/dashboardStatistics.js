@@ -1,6 +1,6 @@
 var statistics = {
   heroesRecruited: 2,
-  request: 54,
+  requests: 54,
   quotes: 74,
   fulfilled: 35
 };
