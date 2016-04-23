@@ -4,6 +4,7 @@ import DashboardStatistics from './DashboardStatistics'
 import DashboardListItem from './DashboardListItem'
 import DashboardMessage from './DashboardMessage'
 import topWeeklyStats from './Mockdata/topWeekly'
+import DashboardTopWeeklyService from './DashboardTopWeeklyService'
 
 
 export default React.createClass({
@@ -11,29 +12,7 @@ export default React.createClass({
     return (
       <div>
         <DashboardStatistics />
-        <Segment>
-          <h2>Top 3 Service Requests of the week</h2>
-          <List className="divided">
-            <DashboardListItem
-              serviceName={topWeeklyStats["1"].serviceType}
-              number={topWeeklyStats["1"].number}
-              iconColour="blue"
-              icon={topWeeklyStats["1"].icon}
-            />
-            <DashboardListItem
-              serviceName={topWeeklyStats["2"].serviceType}
-              number={topWeeklyStats["2"].number}
-              iconColour="blue"
-              icon={topWeeklyStats["2"].icon}
-            />
-            <DashboardListItem
-              serviceName={topWeeklyStats["3"].serviceType}
-              number={topWeeklyStats["3"].number}
-              iconColour="blue"
-              icon={topWeeklyStats["3"].icon}
-            />
-          </List>
-        </Segment>
+        <DashboardTopWeeklyService />
         <DashboardMessage
           messageType="negative"
           icon="warning"

@@ -13,7 +13,7 @@ export default React.createClass({
         fulfilledNumber: dashboardStats.fulfilled,
         heroNumber: dashboardStats.heroesRecruited,
         loading: false})
-    }, 1000)
+    }, 800)
   },
   render() {
     if (!this.state || this.state.loading) {
