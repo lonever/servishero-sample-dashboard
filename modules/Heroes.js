@@ -21,7 +21,6 @@ var HeroListItem = React.createClass({
              editing={false}
            />
         </div>
-
       </Item>
     )
   }
@@ -90,7 +89,6 @@ export default React.createClass({
                   break
                 default:
               }
-
               return (  <HeroListItem hero={ hero } id={ heroId } key={ heroId }/>)
             })}
           </List>

@@ -5,6 +5,7 @@ var clients = {
       email: "superman@gmail.com",
       profilePic: "http://www.howtogetthewomanofyourdreams.com/wp-content/uploads/2013/03/womanslide21.png",
       phone: "+6012344444",
+      serviceRequests: ["cleaning-home"]
     },
     "2": {
       name: "Jessica Alba",
@@ -12,6 +13,7 @@ var clients = {
       email: "brucewayne999@hotmail.com",
       profilePic: "http://celebrity-directory.com/wp-content/uploads/2016/02/69c0fa6f125dfec0a3c318e95bd0469e.jpg",
       phone: "+6012222222",
+      serviceRequests: ["personal-training"]
     },
     "3": {
       name: "Lim Goh Tong",
@@ -19,6 +21,7 @@ var clients = {
       profilePic:"http://cliparts.co/cliparts/8ix/rRk/8ixrRkk4T.png",
       email: "flash@yahoo.com",
       phone: "+60172999292",
+      serviceRequests: ["cleaning-home"]
     },
     "4": {
       name: "Pikachu",
@@ -26,6 +29,7 @@ var clients = {
       address: "41, Jalan Tiga, Bukit Kayu Putih",
       email: "ahchong@strong.com",
       phone: "+691233212",
+      serviceRequests: ["swimming"]
     },
     "5": {
       name: "John",
@@ -33,6 +37,7 @@ var clients = {
       address: "41, Jalan Tiga, Bukit Kayu Putih",
       email: "lim@clean.com",
       phone: "+691233212",
+      serviceRequests: ["moving"]
     },
     "6": {
       name: "Jimmy",
@@ -40,6 +45,7 @@ var clients = {
       address: "41, Jalan Tiga, Bukit Kayu Putih",
       email: "karate@kidz.com",
       phone: "+691233212",
+        serviceRequests: ["cleaning-home", "personal-training"]
     },
     "7": {
       profilePic: "http://www.howtogetthewomanofyourdreams.com/wp-content/uploads/2013/03/womanslide21.png",
@@ -47,6 +53,7 @@ var clients = {
       address: "41, Jalan Tiga, Bukit Kayu Putih",
       email: "aquaman@live.com",
       phone: "+691233212",
+      serviceRequests: ["swimming", "yoga", "karate"]
     },
 
 }
