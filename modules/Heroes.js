@@ -1,20 +1,44 @@
 import React from 'react'
 import { Segment, Menu, Item, List, Header, Loader } from 'react-semantify'
+import { Link } from 'react-router'
 import ServiceLabel from './ServiceLabel'
 import heroes from './Mockdata/heroes'
+import StarRatingComponent from 'react-star-rating-component'
 
+var HeroListItem = React.createClass({
+  render() {
+    return (
+      <Item>
+        <div className="header"><Link to={ "heroes/" + this.props.id }>{ this.props.hero.name }</Link></div>
+        { this.props.hero.services.map((service, i)=> {
+          return (  <ServiceLabel key={i} type={service}/>)
+        })}
+        <div style={{float: "right"}}>
+          <StarRatingComponent
+             name="hero-rating"
+             starCount={10}
+             value={ this.props.hero.averageRating }
+             editing={false}
+           />
+        </div>
+
+      </Item>
+    )
+  }
+})
 export default React.createClass({
   componentDidMount() {
     this.setState({loading: true})
     //mock ajax request here
     setTimeout(function () {
       this.setState({heroes: heroes, loading: false})
-    }.bind(this), 1000)
+    }.bind(this), 400)
   },
   render() {
     if (!this.state || this.state.loading) {
       return <Loader style={{marginTop: "5em"}} className="active centered large"/>
     }
+    var heroes = this.state.heroes
     return (
       <div>
         <Menu className="">
@@ -33,40 +57,9 @@ export default React.createClass({
         </Menu>
         <Segment>
           <List className="divided">
-            <Item>
-              <div className="header">Superman Cleaning Services</div>
-              <ServiceLabel type="cleaning-home"/>
-              <ServiceLabel type="cleaning-commercial"/>
-              <ServiceLabel type="moving"/>
-            </Item>
-            <Item>
-              <div className="header">Batman Fitness</div>
-              <ServiceLabel type="karate"/>
-              <ServiceLabel type="personal-training"/>
-              <ServiceLabel type="swimming"/>
-              <ServiceLabel type="yoga"/>
-            </Item>
-            <Item>
-              <div className="header">Flash Movers</div>
-              <ServiceLabel type="moving"/>
-            </Item>
-            <Item>
-              <div className="header">Ah Chong Personal Training</div>
-              <ServiceLabel type="personal-training"/>
-            </Item>
-            <Item>
-              <div className="header">Lims Home Cleaning</div>
-              <ServiceLabel type="cleaning-home"/>
-            </Item>
-            <Item>
-              <div className="header">Karate Kidz</div>
-              <ServiceLabel type="karate"/>
-              <ServiceLabel type="yoga"/>
-            </Item>
-            <Item>
-              <div className="header">Aquaman Swimmers</div>
-              <ServiceLabel type="swimming"/>
-            </Item>
+            {Object.keys(heroes).map((heroId, i)=> {
+              return (  <HeroListItem hero={ heroes[heroId] } id={ heroId } key={ heroId }/>)
+            })}
           </List>
         </Segment>
       </div>

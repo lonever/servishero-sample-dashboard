@@ -10,7 +10,7 @@ export default React.createClass({
     //mock ajax request here
     setTimeout(function () {
       this.setState({hero: heroes[this.props.params.heroId], loading: false})
-    }.bind(this), 1000)
+    }.bind(this), 400)
   },
   render() {
     if (!this.state || this.state.loading) {
@@ -56,7 +56,7 @@ export default React.createClass({
             <Item>
               Services Provided:
                 {hero.services.map((service, i)=> {
-                  return (  <ServiceLabel type={service}/>)
+                  return (  <ServiceLabel key={i} type={service}/>)
                 })}
             </Item>
           </List>
