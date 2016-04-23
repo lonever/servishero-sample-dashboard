@@ -1,11 +1,20 @@
 import React from 'react'
-import { Segment, Menu, Item, List, Header } from 'react-semantify'
+import { Segment, Menu, Item, List, Header, Loader } from 'react-semantify'
 import ServiceLabel from './ServiceLabel'
-
+import heroes from './Mockdata/heroes'
 
 export default React.createClass({
-
+  componentDidMount() {
+    this.setState({loading: true})
+    //mock ajax request here
+    setTimeout(function () {
+      this.setState({heroes: heroes, loading: false})
+    }.bind(this), 1000)
+  },
   render() {
+    if (!this.state || this.state.loading) {
+      return <Loader style={{marginTop: "5em"}} className="active centered large"/>
+    }
     return (
       <div>
         <Menu className="">
