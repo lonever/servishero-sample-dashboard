@@ -7,7 +7,6 @@ import Heroes from './Heroes'
 import Hero from './Hero'
 import Home from './Home'
 import Requests from './Requests'
-import Request from './Request'
 
 module.exports = (
   <Route path="/" component={App}>
