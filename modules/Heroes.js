@@ -34,6 +34,19 @@ export default React.createClass({
       this.setState({heroes: heroes, loading: false})
     }.bind(this), 400)
   },
+  showAll() {
+    this.setState({selectedCategory: null})
+  },
+  showCleaning() {
+    console.log("clean")
+    this.setState({selectedCategory: "cleaning"})
+  },
+  showFitness() {
+    this.setState({selectedCategory: "fitness"})
+  },
+  showHome() {
+    this.setState({selectedCategory: "home"})
+  },
   render() {
     if (!this.state || this.state.loading) {
       return <Loader style={{marginTop: "5em"}} className="active centered large"/>
@@ -42,10 +55,10 @@ export default React.createClass({
     return (
       <div>
         <Menu className="">
-          <Item>All</Item>
-          <Item>Cleaning</Item>
-          <Item>Home</Item>
-          <Item>Fitness</Item>
+          <Item onClick={ this.showAll }>All</Item>
+          <Item onClick={ this.showCleaning }>Cleaning</Item>
+          <Item onClick={ this.showHome }>Home</Item>
+          <Item onClick={ this.showFitness }>Fitness</Item>
           <div className="right menu">
            <div className="item">
              <div className="ui icon input">
@@ -57,8 +70,28 @@ export default React.createClass({
         </Menu>
         <Segment>
           <List className="divided">
-            {Object.keys(heroes).map((heroId, i)=> {
-              return (  <HeroListItem hero={ heroes[heroId] } id={ heroId } key={ heroId }/>)
+            {Object.keys(heroes).map((heroId, i) => {
+              var hero = heroes[heroId];
+              switch(this.state.selectedCategory) {
+                case "cleaning":
+                  if (hero.services.indexOf("cleaning-home") == -1 && hero.services.indexOf("cleaning-commercial") == -1) {
+                    return;
+                  }
+                  break
+                case "fitness":
+                  if (hero.services.indexOf("personal-training") == -1 && hero.services.indexOf("karate") == -1 && hero.services.indexOf("yoga") == -1 && hero.services.indexOf("swimming") == -1 ) {
+                    return;
+                  }
+                  break
+                case "home":
+                  if (hero.services.indexOf("cleaning-home") == -1 && hero.services.indexOf("moving") == -1) {
+                    return;
+                  }
+                  break
+                default:
+              }
+
+              return (  <HeroListItem hero={ hero } id={ heroId } key={ heroId }/>)
             })}
           </List>
         </Segment>

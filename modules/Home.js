@@ -14,13 +14,13 @@ export default React.createClass({
           <h2>Top 3 Service Requests of the week</h2>
           <List className="divided">
             <DashboardListItem
-              serviceName="Private Zumba Class"
+              serviceName="Personal Training"
               number={342}
               iconColour="blue"
               icon="map marker"
             />
             <DashboardListItem
-              serviceName="Tuition(upper secondary)"
+              serviceName="Cleaning(home)"
               number={232}
               iconColour="blue"
               icon="student"
