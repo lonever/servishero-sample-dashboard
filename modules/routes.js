@@ -17,6 +17,5 @@ module.exports = (
     <Route path="/clients" component={Clients}/>
     <Route path="/clients/:clientId" component={Client}/>
     <Route path="/requests" component={Requests}/>
-    <Route path="/requests/:requestId" component={Request}/>
   </Route>
 )
