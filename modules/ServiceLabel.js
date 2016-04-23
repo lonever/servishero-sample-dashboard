@@ -14,6 +14,18 @@ export default React.createClass({
     case "moving":
         return <Label className="orange">Moving</Label>
         break
+    case "karate":
+        return <Label className="red">Karate</Label>
+        break
+    case "personal-training":
+        return <Label className="orange">Personal Training</Label>
+        break
+    case "yoga":
+        return <Label className="teal">Yoga</Label>
+        break
+    case "swimming":
+        return <Label className="blue">Swimming</Label>
+        break
     default:
         return <Label>UNKNOWN SERVICE</Label>
     }
