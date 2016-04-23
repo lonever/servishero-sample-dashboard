@@ -1,9 +1,3 @@
-// modules/NavLink.js
-import React from 'react'
-import { Link } from 'react-router'
-import { Item} from 'react-semantify'
-
-
 var heroes = {
     "superman": {
       services: ["cleaning-home", "cleaning-commercial", "moving"],
