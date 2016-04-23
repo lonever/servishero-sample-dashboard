@@ -1,33 +1,51 @@
 import React from 'react'
-import { Image, List, Item, Segment, Feed, Label, Content, Message } from 'react-semantify'
+import { Image, List, Item, Segment, Feed, Label, Content, Message, Loader } from 'react-semantify'
 import { Link } from 'react-router'
 import StarRatingComponent from 'react-star-rating-component'
+import clients from './Mockdata/clients'
 
 export default React.createClass({
   componentDidMount() {
-
+    this.setState({loading: true})
+    //mock ajax request here
+    setTimeout(function () {
+      this.setState({client: clients[this.props.params.clientId], loading: false})
+    }.bind(this), 400)
   },
+
+
   render() {
-    const { heroId } = this.props.params
+    if (!this.state || this.state.loading) {
+      return (
+        <Segment style={{minHeight: "10em"}}>
+          <Loader className="centered active large"/>
+        </Segment>
+      )
+    }
+    if (this.state && !this.state.client) {
+      return (
+        <Segment style={{minHeight: "10em"}}>
+          <h2> 404 Client not found! </h2>
+        </Segment>
+      )
+    }
+    var client = this.state.client
     return (
       <div>
         <Segment>
-          <Image className="left floated medium rounded" src="http://www.howtogetthewomanofyourdreams.com/wp-content/uploads/2013/03/womanslide21.png"/>
+          <Image className="left floated medium rounded" src={ client.profilePic }/>
           <List style={{float: "right", width: "65%"}}>
             <Item >
-              Lim Ah Mei
+              { client.name }
             </Item>
             <Item>
-              41, Jalan Flyaway,
-              Taman FlyTogether,
-              46100, Petaling Jaya,
-              Selangor
+              { client.address }
             </Item>
             <Item>
-              ahmei@gmail.com
+              { client.email }
             </Item>
             <Item>
-             +6012344444
+              { client.phone }
             </Item>
           </List>
         </Segment>
@@ -53,7 +71,7 @@ export default React.createClass({
               </div>
               <Content>
                 <div className="summary">
-                    Lim Ah Mei requested for service: Cleaning(home)
+                    {client.name} requested for service: Cleaning(home)
                     <Message>Hello, I just moved in and I need to clean my aparment asap. The previous tenant left mysterious stains everywhere.</Message>
                   <div className="date">21/4/2016 15:29</div>
                 </div>

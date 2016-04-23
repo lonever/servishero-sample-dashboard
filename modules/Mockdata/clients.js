@@ -10,7 +10,7 @@ var clients = {
       name: "Jessica Alba",
       address: "Batcave",
       email: "brucewayne999@hotmail.com",
-      profilePic: "http://science-all.com/images/jessica-alba/jessica-alba-07.jpg",
+      profilePic: "http://celebrity-directory.com/wp-content/uploads/2016/02/69c0fa6f125dfec0a3c318e95bd0469e.jpg",
       phone: "+6012222222",
     },
     "3": {
