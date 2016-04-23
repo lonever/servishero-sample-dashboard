@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, List, Item } from 'react-semantify'
+import { Segment, List, Item, Loader } from 'react-semantify'
 import { Link } from 'react-router'
 import clients from './Mockdata/clients'
 import ServiceLabel from './ServiceLabel'
@@ -18,7 +18,19 @@ var ClientListItem = React.createClass({
 })
 
 export default React.createClass({
+  componentDidMount() {
+    this.setState({loading: true})
+    //mock ajax request here
+    setTimeout(function () {
+      this.setState({clients: clients, loading: false})
+    }.bind(this), 400)
+  },
+
   render() {
+    if (!this.state || this.state.loading) {
+      return <Loader style={{marginTop: "5em"}} className="active centered large"/>
+    }
+    var clients = this.state.clients
     return (
       <Segment>
         <List className="divided">

@@ -37,7 +37,6 @@ export default React.createClass({
     this.setState({selectedCategory: null})
   },
   showCleaning() {
-    console.log("clean")
     this.setState({selectedCategory: "cleaning"})
   },
   showFitness() {
