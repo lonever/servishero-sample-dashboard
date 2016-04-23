@@ -1,15 +1,32 @@
 import React from 'react'
-import { Image, List, Item, Segment, Feed, Label, Content, Message } from 'react-semantify'
+import { Image, List, Item, Segment, Feed, Label, Content, Message, Loader } from 'react-semantify'
 import StarRatingComponent from 'react-star-rating-component'
 import ServiceLabel from './ServiceLabel'
 import heroes from './Mockdata/heroes'
 
 export default React.createClass({
   componentDidMount() {
-    console.log("heroes", heroes)
+    this.setState({loading: true})
+    //mock ajax request here
+    setTimeout(function () {
+      this.setState({hero: heroes[this.props.params.heroId], loading: false})
+    }.bind(this), 1000)
   },
   render() {
-    const { heroId } = this.props.params
+    if (this.state && this.state.loading) {
+      return (
+        <Segment style={{minHeight: "10em"}}>
+          <Loader className="centered active large"/>
+        </Segment>
+      )
+    }
+    if (this.state && !this.state.hero) {
+      return (
+        <Segment style={{minHeight: "10em"}}>
+          <h2> 404 Hero not found! </h2>
+        </Segment>
+      )
+    }
     return (
       <div>
         <Segment>
