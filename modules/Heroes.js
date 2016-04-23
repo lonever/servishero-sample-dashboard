@@ -53,10 +53,10 @@ export default React.createClass({
     return (
       <div>
         <Menu className="">
-          <Item onClick={ this.showAll }>All</Item>
-          <Item onClick={ this.showCleaning }>Cleaning</Item>
-          <Item onClick={ this.showHome }>Home</Item>
-          <Item onClick={ this.showFitness }>Fitness</Item>
+          <Item className="link" onClick={ this.showAll }>All</Item>
+          <Item className="link" onClick={ this.showCleaning }>Cleaning</Item>
+          <Item className="link" onClick={ this.showHome }>Home</Item>
+          <Item className="link" onClick={ this.showFitness }>Fitness</Item>
           <div className="right menu">
            <div className="item">
              <div className="ui icon input">
