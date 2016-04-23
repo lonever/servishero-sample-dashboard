@@ -1,6 +1,7 @@
 import React from 'react'
 import { Image, List, Item, Segment, Feed, Label, Content, Message } from 'react-semantify'
 import StarRatingComponent from 'react-star-rating-component'
+import ServiceLabel from './ServiceLabel'
 
 export default React.createClass({
   componentDidMount() {
@@ -37,9 +38,10 @@ export default React.createClass({
                />
             </Item>
             <Item>
-              Services Provided: <Label className="blue">Cleaning(home)</Label>
-               <Label className="green">Cleaning(Commercial)</Label>
-                <Label className="orange">Moving</Label>
+              Services Provided:
+                <ServiceLabel type="cleaning-home"/>
+                <ServiceLabel type="cleaning-commercial"/>
+                <ServiceLabel type="moving"/>
             </Item>
           </List>
         </Segment>

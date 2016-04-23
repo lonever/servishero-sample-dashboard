@@ -44,11 +44,10 @@ export default React.createClass({
             </Item>
           </div>
         </Menu>
-        <div className="ui segment">
+        <Segment>
           <List className="divided">
             <Item>
               <div className="header">Superman</div>
-              A lovely city
             </Item>
             <Item>
               <div className="header">Batman</div>
@@ -56,7 +55,7 @@ export default React.createClass({
             </Item>
 
           </List>
-        </div>
+        </Segment>
       </div>
     )
   }
