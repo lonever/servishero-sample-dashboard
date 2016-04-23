@@ -3,7 +3,6 @@ import { Statistic, Label, Message, List, Item, Segment, Header } from 'react-se
 import DashboardStatistics from './DashboardStatistics'
 import DashboardListItem from './DashboardListItem'
 import DashboardMessage from './DashboardMessage'
-import dashboardStats from './Mockdata/dashboardStatistics'
 import topWeeklyStats from './Mockdata/topWeekly'
 
 
@@ -11,12 +10,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <DashboardStatistics
-          heroNumber={dashboardStats.heroesRecruited}
-          requestNumber={dashboardStats.requests}
-          quoteNumber={dashboardStats.quotes}
-          fulfilledNumber={dashboardStats.fulfilled}
-        />
+        <DashboardStatistics />
         <Segment>
           <h2>Top 3 Service Requests of the week</h2>
           <List className="divided">
