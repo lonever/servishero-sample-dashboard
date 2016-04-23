@@ -7,13 +7,13 @@ export default React.createClass({
   componentDidMount(){
     this.setState({loading: true})
     //mock ajax request here
-    setTimeout(function () {
+    setTimeout( () => {
       this.setState({requestNumber: dashboardStats.requests,
         quoteNumber: dashboardStats.quotes,
         fulfilledNumber: dashboardStats.fulfilled,
         heroNumber: dashboardStats.heroesRecruited,
         loading: false})
-    }.bind(this), 1000)
+    }, 1000)
   },
   render() {
     if (!this.state || this.state.loading) {

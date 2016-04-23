@@ -29,9 +29,9 @@ export default React.createClass({
   componentDidMount() {
     this.setState({loading: true})
     //mock ajax request here
-    setTimeout(function () {
+    setTimeout(()=> {
       this.setState({heroes: heroes, loading: false})
-    }.bind(this), 400)
+    }, 400)
   },
   showAll() {
     this.setState({selectedCategory: null})
