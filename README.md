@@ -11,6 +11,7 @@ I created fake AJAX requests to simulate requesting data from a micro-service ba
 
 # Pages
 This dashboard contains the following pages:
+
 1. Home page with dashboard
 2. Heroes page showing list of heroes
 3. Hero page showing individual hero
