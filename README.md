@@ -1,4 +1,5 @@
 # Instructions
+`npm install` to install dependencies
 `npm start` for development
 `NODE_ENV=production npm start` for a naive server
 
